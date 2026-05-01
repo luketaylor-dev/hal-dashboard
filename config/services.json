@@ -1,0 +1,60 @@
+{
+  "services": [
+    {
+      "name": "ollama",
+      "displayName": "Ollama",
+      "controller": "systemd",
+      "unit": "ollama.service",
+      "type": "ollama",
+      "url": "http://localhost:11434",
+      "modelDir": "/usr/share/ollama/.ollama/models"
+    },
+    {
+      "name": "comfyui",
+      "displayName": "ComfyUI",
+      "controller": "systemd",
+      "unit": "comfyui.service",
+      "type": "comfyui",
+      "url": "http://localhost:8188",
+      "modelDir": "/home/dibza/ComfyUI/models"
+    },
+    {
+      "name": "sillytavern",
+      "displayName": "SillyTavern",
+      "controller": "systemd",
+      "unit": "sillytavern.service",
+      "type": "generic",
+      "url": "http://localhost:8000"
+    },
+    {
+      "name": "open-webui",
+      "displayName": "Open WebUI",
+      "controller": "docker",
+      "container": "open-webui",
+      "type": "generic",
+      "url": "http://localhost:8080"
+    },
+    {
+      "name": "searxng",
+      "displayName": "SearXNG",
+      "controller": "docker",
+      "container": "searxng",
+      "type": "generic",
+      "url": "http://localhost:8888"
+    },
+    {
+      "name": "speaches",
+      "displayName": "Speaches (Whisper STT)",
+      "controller": "docker",
+      "container": "speaches",
+      "type": "generic"
+    },
+    {
+      "name": "piper-tts",
+      "displayName": "Piper TTS",
+      "controller": "docker",
+      "container": "piper-tts",
+      "type": "generic"
+    }
+  ]
+}

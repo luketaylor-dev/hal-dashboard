@@ -1,0 +1,26 @@
+[Unit]
+Description=hal AI Server Dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=aidash
+Group=aidash
+WorkingDirectory=/home/aidash/hal-dashboard
+Environment=NODE_ENV=production
+Environment=PORT=3737
+Environment=HOSTNAME=0.0.0.0
+ExecStart=/usr/bin/node /home/aidash/hal-dashboard/server.js
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=false
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/aidash/hal-dashboard/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+# /etc/sudoers.d/aidash — installed by scripts/install.sh
+# Mode 0440. Edit with: sudo visudo -f /etc/sudoers.d/aidash
+#
+# Scope: only the systemctl start/stop/restart actions hal-dashboard performs.
+#
+# Not in here, because they don't need sudo:
+#   - docker:                 aidash is in the `docker` group
+#   - nvidia-smi:             aidash is in the `video` group
+#   - journalctl -u <unit>:   aidash is in the `systemd-journal` group
+#   - systemctl is-active:    no sudo required
+#   - systemctl show:         no sudo required
+
+aidash ALL=(root) NOPASSWD: /bin/systemctl start ollama.service, \
+                            /bin/systemctl stop ollama.service, \
+                            /bin/systemctl restart ollama.service, \
+                            /bin/systemctl start comfyui.service, \
+                            /bin/systemctl stop comfyui.service, \
+                            /bin/systemctl restart comfyui.service, \
+                            /bin/systemctl start sillytavern.service, \
+                            /bin/systemctl stop sillytavern.service, \
+                            /bin/systemctl restart sillytavern.service
