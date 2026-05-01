@@ -128,9 +128,9 @@ export function ModelList() {
             <div className="mt-2 space-y-1">
               <div className="text-xs text-muted-foreground">{pullStatus}</div>
               {pullPct !== null && (
-                <div className="h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-zinc-900 dark:bg-zinc-100 transition-all"
+                    className="h-full bg-foreground/70 transition-all"
                     style={{ width: `${pullPct.toFixed(1)}%` }}
                   />
                 </div>
@@ -151,14 +151,14 @@ export function ModelList() {
           ) : data.models.length === 0 ? (
             <div className="text-sm text-muted-foreground">No models installed.</div>
           ) : (
-            <ul className="divide-y divide-zinc-100 dark:divide-zinc-800">
+            <ul className="divide-y divide-border">
               {data.models.map((m) => (
                 <li key={m.name} className="flex items-center gap-2 py-2">
                   <div className="flex-1 min-w-0">
                     <div className="font-medium truncate flex items-center gap-2">
                       {m.name}
                       {loadedNames.has(m.name) && (
-                        <Badge className="bg-green-600 hover:bg-green-600 text-white text-[10px]">
+                        <Badge className="bg-[var(--hal-eye)] hover:bg-[var(--hal-eye)] text-white font-mono uppercase tracking-wider text-[10px]">
                           loaded
                         </Badge>
                       )}

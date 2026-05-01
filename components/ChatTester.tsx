@@ -102,7 +102,7 @@ export function ChatTester() {
         </form>
         {(response || running) && (
           <div className="mt-3">
-            <pre className="text-sm whitespace-pre-wrap font-mono p-2 rounded bg-zinc-50 dark:bg-zinc-950 max-h-[60vh] overflow-auto">
+            <pre className="text-sm whitespace-pre-wrap font-mono p-2 rounded bg-muted/40 max-h-[60vh] overflow-auto">
               {response || "…"}
             </pre>
             {elapsed !== null && (

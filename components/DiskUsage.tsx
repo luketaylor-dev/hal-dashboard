@@ -53,9 +53,9 @@ export function DiskUsage() {
                     {formatBytes(data.filesystem.used)} / {formatBytes(data.filesystem.size)}
                   </span>
                 </div>
-                <div className="h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-zinc-900 dark:bg-zinc-100"
+                    className="h-full bg-foreground/70"
                     style={{ width: `${Math.min(100, data.filesystem.usePercent)}%` }}
                   />
                 </div>
@@ -65,7 +65,7 @@ export function DiskUsage() {
               {data.modelDirs.map((d) => (
                 <li
                   key={d.path}
-                  className="flex justify-between border-t border-zinc-100 dark:border-zinc-800 pt-1"
+                  className="flex justify-between border-t border-border pt-1"
                 >
                   <span className="font-mono text-xs truncate max-w-[60%]" title={d.path}>
                     {d.path}

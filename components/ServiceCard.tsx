@@ -11,11 +11,11 @@ import type { ServiceStatus } from "@/lib/services";
 type Action = "start" | "stop" | "restart";
 
 const stateColors: Record<string, string> = {
-  active: "bg-green-600 hover:bg-green-600",
-  inactive: "bg-zinc-500 hover:bg-zinc-500",
-  failed: "bg-red-600 hover:bg-red-600",
-  transitioning: "bg-amber-500 hover:bg-amber-500",
-  unknown: "bg-zinc-400 hover:bg-zinc-400",
+  active: "bg-emerald-700/80 hover:bg-emerald-700/80 text-emerald-50",
+  inactive: "bg-secondary hover:bg-secondary text-muted-foreground",
+  failed: "bg-[var(--hal-eye)] hover:bg-[var(--hal-eye)] text-white",
+  transitioning: "bg-amber-600/80 hover:bg-amber-600/80 text-amber-50",
+  unknown: "bg-muted hover:bg-muted text-muted-foreground",
 };
 
 export function ServiceCard({
@@ -59,7 +59,7 @@ export function ServiceCard({
               {service.displayName}
             </Link>
           </CardTitle>
-          <Badge className={`${stateColors[state] ?? stateColors.unknown} text-white`}>
+          <Badge className={`${stateColors[state] ?? stateColors.unknown} font-mono uppercase text-[10px] tracking-wider`}>
             {state}
           </Badge>
         </div>

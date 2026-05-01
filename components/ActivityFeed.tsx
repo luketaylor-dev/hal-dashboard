@@ -52,11 +52,11 @@ export function ActivityFeed({ limit = 10 }: { limit?: number }) {
             {events.map((e) => (
               <li
                 key={e.id}
-                className="flex items-baseline gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-1 last:border-0"
+                className="flex items-baseline gap-2 border-b border-border pb-1 last:border-0"
               >
                 <span
                   className={`inline-block h-1.5 w-1.5 rounded-full ${
-                    e.success ? "bg-green-500" : "bg-red-500"
+                    e.success ? "bg-emerald-500/70" : "bg-[var(--hal-eye)]"
                   }`}
                 />
                 <span className="flex-1">{describe(e)}</span>

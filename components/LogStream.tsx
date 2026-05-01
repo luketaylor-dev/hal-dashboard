@@ -59,7 +59,7 @@ export function LogStream({ serviceName }: { serviceName: string }) {
       <div className="flex flex-wrap items-center gap-2">
         <span
           className={`inline-block h-2 w-2 rounded-full ${
-            connected ? "bg-green-500" : "bg-zinc-400"
+            connected ? "hal-eye" : "bg-muted-foreground"
           }`}
         />
         <span className="text-xs text-muted-foreground">
@@ -81,7 +81,7 @@ export function LogStream({ serviceName }: { serviceName: string }) {
       </div>
       <div
         ref={containerRef}
-        className="font-mono text-xs whitespace-pre-wrap overflow-auto h-[70vh] border rounded bg-zinc-50 dark:bg-zinc-950 p-3"
+        className="font-mono text-xs whitespace-pre-wrap overflow-auto h-[70vh] border rounded bg-muted/40 p-3"
       >
         {filtered.map((l, i) => (
           <div key={i}>{l}</div>

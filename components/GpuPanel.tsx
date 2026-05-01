@@ -76,7 +76,7 @@ export function GpuPanel() {
               {memUsedGB} <span className="text-base text-muted-foreground">/ {memTotalGB} GB</span>
             </div>
           </div>
-          <div className="text-muted-foreground">
+          <div className="text-[var(--hal-eye)]">
             <VramSparkline history={history} memTotalMB={snap.memTotalMB} />
           </div>
         </div>
@@ -101,10 +101,10 @@ function Bar({ label, pct }: { label: string; pct: number }) {
         <span className="text-muted-foreground">{label}</span>
         <span className="tabular-nums">{clamped.toFixed(0)}%</span>
       </div>
-      <div className="h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+      <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
         <div
-          className="h-full bg-zinc-900 dark:bg-zinc-100 transition-all duration-500"
-          style={{ width: `${clamped}%` }}
+          className="h-full bg-[var(--hal-eye)] transition-all duration-500"
+          style={{ width: `${clamped}%`, boxShadow: "0 0 6px var(--hal-eye-glow)" }}
         />
       </div>
     </div>

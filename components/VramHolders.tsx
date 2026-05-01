@@ -32,7 +32,7 @@ export function VramHolders() {
                 .slice()
                 .sort((a, b) => b.usedMemMB - a.usedMemMB)
                 .map((p) => (
-                  <tr key={p.pid} className="border-t border-zinc-100 dark:border-zinc-800">
+                  <tr key={p.pid} className="border-t border-border">
                     <td className="py-1.5 truncate max-w-[200px]" title={p.processName}>
                       {p.processName.split("/").pop()}
                     </td>
